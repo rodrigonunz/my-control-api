@@ -1,0 +1,66 @@
+﻿Erro de aplicação
+
+Event:
+	aplicação,
+	versão da aplicação,
+	log :
+		data e hora,
+		tipo de log (erro),
+		login usuário,
+		mensagem,
+		mensagem completa (stack – em 3 níveis)
+			
+	
+Exemplo de erro:
+{
+	"event":{
+		"aplicacao" : "e8-administracao-service",
+		"versao" : "1.0.0",
+		"log" : {
+			"data_hora"	: "2018-02-28 10:09:11",
+			"tipo" : "erro",
+			"funcional" : "987296486",
+			"mensagem" : "Error in converting entity",
+			"mensagem_completa" : "Error in converting entity br.com.uni.Lancamento. Conversion Error. Abstract Conversion."
+		}
+	}
+}
+			
+Biblioteca
+Tipo de log: erro, info	
+
+Log de persistência				
+
+Event:
+	aplicação,
+	versão da aplicação,
+	log :
+		data e hora,
+		tipo de log (info),
+		login usuário,
+		mensagem,
+		mensagem completa :
+				tabela,
+				id,
+				campos
+
+Exemplo de persistência:
+{
+	"event":{
+		"aplicacao" : "e8-administracao-service",
+		"versao" : "1.0.0",
+		"log" : {
+			"data_hora"	: "2018-02-28 10:09:11",
+			"tipo" : "info",
+			"funcional" : "987296486",
+			"mensagem" : "Alterou",
+			"mensagem_completa" : {
+				"tabela" : "LANCAMENTO",
+				"id" : "CODIGO=1"
+				"campos" : "old -> NOME=FOO, TIPO=tipo1; new -> NOME=BAR, TIPO=tipo2"
+			
+			}
+		}
+	}
+}
+
