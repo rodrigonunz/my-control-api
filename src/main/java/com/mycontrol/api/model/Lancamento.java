@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.mycontrol.api.annotation.Audit;
+
 @Entity
 @Table(name = "lancamento")
+@Audit
 public class Lancamento {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
